@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FishermanBook</string>
+    <string name="fish">Fish</string>
+    <string name="bait">Baits</string>
+    <string name="tackle">Takcles</string>
+    <string name="stories">Stories</string>
+    <string name="fisherman">TODO</string>
+
+</resources>
