@@ -5,5 +5,8 @@
     <string name="tackle">Takcles</string>
     <string name="stories">Stories</string>
     <string name="fisherman">TODO</string>
+    <string name="fish_title"></string>
+    <string name="fish_pic"></string>
+    <string name="fish_discription_short"></string>
 
 </resources>
