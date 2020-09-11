@@ -8,5 +8,8 @@
     <string name="fish_title"></string>
     <string name="fish_pic"></string>
     <string name="fish_discription_short"></string>
+    <string name="tt">tt</string>
+    <string name="textview">TextView</string>
+    <string name="text">text</string>
 
 </resources>

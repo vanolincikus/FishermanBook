@@ -1,6 +1,7 @@
 package com.example.fishermanbook
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,10 +22,19 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
         val image = view.findViewById<ImageView>(R.id.fish_pic)
 
         fun bind(listItem: ListItem, context: Context) {
-            tvTitle.text=listItem.titleText
-            tvContent.text=listItem.contentText
+            tvTitle.text = listItem.titleText
+            tvContent.text = listItem.contentText
             image.setImageResource(listItem.image_id)
-            itemView.setOnClickListener(){Toast.makeText(context,"Pressed:  ${tvTitle.text}",Toast.LENGTH_SHORT).show()}
+            itemView.setOnClickListener() {
+                Toast.makeText(context, "Pressed:  ${tvTitle.text}", Toast.LENGTH_SHORT).show()
+                val i = Intent(context, ContentActivity::class.java).apply {
+                    putExtra("title", tvTitle.text.toString())
+                    putExtra("content", tvContent.text.toString())
+                    putExtra("image", listItem.image_id)
+                }
+                context.startActivity(i)
+            }
+
 
         }
     }
@@ -35,12 +45,18 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-       var listItem=listArrayR.get(position)
-        holder.bind(listItem,contextR)
+        var listItem = listArrayR.get(position)
+        holder.bind(listItem, contextR)
     }
 
     override fun getItemCount(): Int {
         return listArrayR.size
+    }
+
+    fun updateAdapter(listArray: List<ListItem>) {
+        listArrayR.clear()
+        listArrayR.addAll(listArray)
+        notifyDataSetChanged()
     }
 
 }
