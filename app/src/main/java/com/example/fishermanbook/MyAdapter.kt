@@ -53,7 +53,7 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
     override fun getItemCount(): Int {
         return listArrayR.size
     }
-
+// update adapter
     fun updateAdapter(listArray: List<ListItem>) {
         listArrayR.clear()
         listArrayR.addAll(listArray)
