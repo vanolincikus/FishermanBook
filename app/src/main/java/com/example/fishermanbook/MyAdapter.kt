@@ -23,7 +23,7 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
 
         fun bind(listItem: ListItem, context: Context) {
             tvTitle.text = listItem.titleText
-            var shorDescription= listItem.contentText.substring(0,50)+ "..."
+            var shorDescription = listItem.contentText.substring(0, 50) + "..."
             tvContent.text = shorDescription
             image.setImageResource(listItem.image_id)
             itemView.setOnClickListener() {
@@ -53,7 +53,8 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
     override fun getItemCount(): Int {
         return listArrayR.size
     }
-// update adapter
+
+    // update adapter
     fun updateAdapter(listArray: List<ListItem>) {
         listArrayR.clear()
         listArrayR.addAll(listArray)
