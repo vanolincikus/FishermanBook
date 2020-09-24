@@ -10,9 +10,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-
 class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+
     var listArrayR = listArray
     var contextR = context
 
